@@ -3,7 +3,7 @@ import React, { useReducer, useState, useEffect, } from 'react';
 import { render } from '@testing-library/react';
 import ListView from './ListView';
 import DetailView from './DetailView'
-import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Switch, Redirect} from 'react-router-dom';
 
 //https://pokeapi.co/api/v2/pokedex/1/
 
@@ -48,6 +48,7 @@ function App() {
           <Switch>
             <Route exact path="/" render={()=> <ListView props={state} />}/>
             <Route path="/pokemon/:id" component={DetailView} />
+            <Redirect exact from="/pokemon" to="/" />
           </Switch>
         </Router>
       </div>
@@ -56,9 +57,3 @@ function App() {
 }
 
 export default App;
-
-//go ahead and try
-//kk
-//I guess it was working because  <Route path="/bulbasaur" component={DetailView} /> was in there... 
-//I was trying to make the routes in ListView
-//works now :)
