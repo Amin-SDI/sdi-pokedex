@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import React, { useReducer, useState, useEffect, } from 'react';
 import { render } from '@testing-library/react';
 import ListView from './ListView';
@@ -37,7 +37,10 @@ function App() {
   
   return (
     <div className="App">
-      < ListView props={state.pokedex} />
+      <div className="pokemon-list">
+        <h1>Pokemans</h1>
+          < ListView props={state.pokedex} />
+      </div>
     </div>
   );
 }
