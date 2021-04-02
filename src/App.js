@@ -1,8 +1,9 @@
 // import './App.css';
 import React, { useReducer, useState, useEffect, } from 'react';
 import { render } from '@testing-library/react';
-import ListView from './ListView';
-import DetailView from './DetailView'
+import ListView from './components/ListView';
+import DetailView from './components/DetailView'
+import AboutUs from './components/AboutUs'
 import {BrowserRouter as Router, Link, Route, Switch, Redirect} from 'react-router-dom';
 
 //https://pokeapi.co/api/v2/pokedex/1/
@@ -43,11 +44,17 @@ function App() {
   return (
     <div className="App">
       <div className="pokemon-list">
+        <header>
         <h1 className="title">Pokedex</h1>
+        <Link to="/about-us">
+        <span className="about-us">About Us</span>
+        </Link>
+        </header>
         <Router>
           <Switch>
             <Route exact path="/" render={()=> <ListView props={state} />}/>
             <Route path="/pokemon/:id" component={DetailView} />
+            <Route exact path="/about-us" component={AboutUs}/>
             <Redirect exact from="/pokemon" to="/" />
           </Switch>
         </Router>

@@ -1,6 +1,5 @@
 import styles from './ListView.modules.css';
 import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
-import DetailView from './DetailView';
 
 //Imports all the files  in pokemon-sprites in order from 1-151.png
 function importAll(r) {
@@ -9,7 +8,7 @@ function importAll(r) {
   return images;
 }
 //call "images[`${number}.png`].default" to display images
-const images = importAll(require.context('./pokemon-sprites', false, /\.png$/));
+const images = importAll(require.context('../pokemon-sprites', false, /\.png$/));
 
 
 const ListView = ({props}) => {  

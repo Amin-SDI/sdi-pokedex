@@ -8,7 +8,7 @@ function importAll(r) {
     return images;
   }
   //call "images[`${number}.png`].default" to display images
-  const images = importAll(require.context('./pokemon-sprites', false, /\.png$/));
+  const images = importAll(require.context('../pokemon-sprites', false, /\.png$/));
 
 
 const initialState = { //only ever used once in useReducer
@@ -68,8 +68,8 @@ function DetailView({match}){
 
     return (
         <div className="selected-list-view">
+          <img src={images[`${state.id}.png`].default}alt={state.name}/>
             <h3 className='pokemon-name'>name: {state.name}</h3>
-            <img src={images[`${state.id}.png`].default}alt={state.name}/>
             <h3 className='pokemon-type'>type: {state.types}</h3>
             <h3 className='pokemon-abilities'>abilities: {state.abilities}</h3>
             <h3 className='pokemon-environment'>environment: {state.environment}</h3>
