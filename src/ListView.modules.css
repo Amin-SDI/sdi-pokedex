@@ -1,0 +1,40 @@
+.list-view {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.pokemon {
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.pokemon.selected {
+  background-color: grey
+}
+
+.pokemon:hover {
+  background-color: lightgray;
+}
+
+.pokemon-name {
+  color: black;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.title {
+  text-align: center;
+}
