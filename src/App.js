@@ -44,13 +44,15 @@ function App() {
   return (
     <div className="App">
       <div className="pokemon-list">
+      <Router>
         <header>
+        <Link to="/pokemon">
         <h1 className="title">Pokedex</h1>
+        </Link>
         <Link to="/about-us">
         <span className="about-us">About Us</span>
         </Link>
         </header>
-        <Router>
           <Switch>
             <Route exact path="/" render={()=> <ListView props={state} />}/>
             <Route path="/pokemon/:id" component={DetailView} />
