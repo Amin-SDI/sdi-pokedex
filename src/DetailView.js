@@ -32,6 +32,11 @@ function reducer(state, action){
         environment: ''
     }
       case'savePokemonLocation':
+            if(!action.data[0]){
+                return {...state,
+                environment: 'Unknown'
+                }
+            }
          return{
              ...state,
              environment: action.data.map(element=>element.location_area.name).join(', '),
